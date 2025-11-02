@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINITE LOGIC - Enterprise-Grade Infrastructure Utilities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles for professional, dark aesthetic */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark GitHub background color */
+            color: #c9d1d9;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 10%, rgba(31, 41, 55, 0.8), transparent);
+        }
+        .section-header {
+            color: #58a6ff; /* Primary brand color */
+            font-weight: 700;
+        }
+        .feature-card {
+            background-color: #161b22;
+            transition: all 0.3s ease;
+            border: 1px solid #30363d;
+        }
+        .feature-card:hover {
+            border-color: #58a6ff;
+            box-shadow: 0 4px 6px -1px rgba(88, 166, 255, 0.2), 0 2px 4px -2px rgba(88, 166, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        .cta-button {
+            background-color: #238636;
+            transition: background-color 0.2s;
+        }
+        .cta-button:hover {
+            background-color: #2ea043;
+        }
+        .npm-install-box {
+            background-color: #010409;
+            border: 1px solid #58a6ff40;
+            color: #58a6ff;
+        }
+        /* Modal Styles */
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+    </style>
+    <!-- Initialize Lucide icons -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#58a6ff',
+                        'secondary-dark': '#161b22',
+                        'bg-dark': '#0d1117',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased">
+    <div class="min-h-screen hero-gradient">
+
+        <!-- Header/Navigation -->
+        <header class="p-6 border-b border-secondary-dark sticky top-0 bg-bg-dark/95 backdrop-blur-sm z-10">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <div class="text-2xl font-bold text-primary">
+                    FINITE LOGIC
+                </div>
+                <nav class="space-x-4 flex items-center">
+                    <a href="#solutions" class="text-sm text-gray-400 hover:text-primary transition">Solutions</a>
+                    <a href="#tiers" class="text-sm text-gray-400 hover:text-primary transition">Pricing</a>
+                    <a href="#contact" class="text-sm text-gray-400 hover:text-primary transition">Contact</a>
+                    <button onclick="openModal('register')" class="py-2 px-4 rounded-lg bg-primary text-bg-dark font-semibold text-sm hover:bg-blue-400 transition ml-4">
+                        Start 14-Day Free Trial
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="max-w-5xl mx-auto text-center py-20 px-6">
+            <span class="section-header text-lg uppercase tracking-widest mb-3 inline-block">FINITE LOGIC: COMPLETE ARCHITECTURE SOLUTIONS</span>
+            <h1 class="text-6xl md:text-7xl font-extrabold text-white leading-tight mb-6">
+                Unbreakable Trust and <span class="text-primary">Zero-Drift</span> Infrastructure.
+            </h1>
+            <p class="text-xl text-gray-400 mb-10 max-w-3xl mx-auto">
+                Move beyond simple utilities. FINITE LOGIC combines 10 high-end Node.js packages into a single, cohesive SAAS platform for enterprise security, performance, and compliance.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <button onclick="openModal('register')" class="py-3 px-8 rounded-xl cta-button text-white font-bold text-lg shadow-lg shadow-primary/20">
+                    Get Started (Free Trial)
+                </button>
+                <a href="#solutions" class="py-3 px-8 rounded-xl border border-gray-600 text-gray-300 font-bold text-lg hover:bg-secondary-dark transition">
+                    Explore All 10 Packages
+                </a>
+            </div>
+        </section>
+
+        <!-- Solutions Overview (The 10 Products) -->
+        <section id="solutions" class="max-w-7xl mx-auto py-16 px-6">
+            <h2 class="text-4xl font-bold text-white text-center mb-4">The 10 Pillars of Modern Infrastructure</h2>
+            <p class="text-lg text-gray-400 text-center max-w-3xl mx-auto mb-12">
+                Every solution starts as a powerful, **self-hosted NPM package**. Upgrade to the Pro API for managed, scalable, and guaranteed enterprise features.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Solution Cards (ImmutaAudit to StreamWeaver) -->
+                <!-- Note: The content for 8 cards is the same as before, just wrapped for brevity -->
+                <!-- Solution 1: ImmutaAudit -->
+                <div class="feature-card p-6 rounded-xl">
+                    <i data-lucide="shield-check" class="text-primary mb-3 h-8 w-8"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">1. ImmutaAudit</h3>
+                    <p class="text-gray-400 text-sm mb-4">Guaranteed state integrity using cryptographic hashing and immutability verification.</p>
+                    <div class="text-xs font-mono npm-install-box p-2 rounded-lg">
+                        npm i @finite-logic/immuta-audit
+                    </div>
+                </div>
+                <!-- Solution 2: CognitoRoute -->
+                <div class="feature-card p-6 rounded-xl">
+                    <i data-lucide="route" class="text-primary mb-3 h-8 w-8"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">2. CognitoRoute</h3>
+                    <p class="text-gray-400 text-sm mb-4">Intelligent, cost-optimized scheduling logic for cloud functions and asynchronous tasks.</p>
+                    <div class="text-xs font-mono npm-install-box p-2 rounded-lg">
+                        npm i @finite-logic/cognito-route
+                    </div>
+                </div>
+                <!-- Solution 3: BlindQuery -->
+                <div class="feature-card p-6 rounded-xl">
+                    <i data-lucide="eye-off" class="text-primary mb-3 h-8 w-8"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">3. BlindQuery</h3>
+                    <p class="text-gray-400 text-sm mb-4">Core Homomorphic Encryption for secure, private data aggregation and computation.</p>
+                    <div class="text-xs font-mono npm-install-box p-2 rounded-lg">
+                        npm i @finite-logic/blind-query
+                    </div>
+                </div>
+                <!-- Solution 4: PolyOptim -->
+                <div class="feature-card p-6 rounded-xl">
+                    <i data-lucide="trending-up" class="text-primary mb-3 h-8 w-8"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">4. PolyOptim</h3>
+                    <p class="text-gray-400 text-sm mb-4">JIT Simulation and Profiling algorithms for identifying optimal runtime execution paths.</p>
+                    <div class="text-xs font-mono npm-install-box p-2 rounded-lg">
+                        npm i @finite-logic/poly-optim
+                    </div>
+                </div>
+                <!-- Solution 5: EthosGuard -->
+                <div class="feature-card p-6 rounded-xl">
+                    <i data-lucide="gavel" class="text-primary mb-3 h-8 w-8"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">5. EthosGuard</h3>
+                    <p class="text-gray-400 text-sm mb-4">A local, declarative compliance and data policy rule engine for local security checks.</p>
+                    <div class="text-xs font-mono npm-install-box p-2 rounded-lg">
+                        npm i @finite-logic/ethos-guard
+                    </div>
+                </div>
+                <!-- Solution 6: TrustLedger -->
+                <div class="feature-card p-6 rounded-xl">
+                    <i data-lucide="book-open-check" class="text-primary mb-3 h-8 w-8"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">6. TrustLedger</h3>
+                    <p class="text-gray-400 text-sm mb-4">A simple event sourcing core for rebuilding application state with a local audit trail.</p>
+                    <div class="text-xs font-mono npm-install-box p-2 rounded-lg">
+                        npm i @finite-logic/trust-ledger
+                    </div>
+                </div>
+                <!-- Solution 7: InfraSeal Drift -->
+                <div class="feature-card p-6 rounded-xl">
+                    <i data-lucide="atom" class="text-primary mb-3 h-8 w-8"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">7. InfraSeal Drift</h3>
+                    <p class="text-gray-400 text-sm mb-4">A local detector for configuration drift, comparing current state against a target state.</p>
+                    <div class="text-xs font-mono npm-install-box p-2 rounded-lg">
+                        npm i @finite-logic/infraseal-drift
+                    </div>
+                </div>
+                <!-- Solution 8: StreamWeaver -->
+                <div class="feature-card p-6 rounded-xl">
+                    <i data-lucide="refresh-cw" class="text-primary mb-3 h-8 w-8"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">8. StreamWeaver</h3>
+                    <p class="text-gray-400 text-sm mb-4">Exactly-Once processing logic for stream handling, ensuring reliable message delivery.</p>
+                    <div class="text-xs font-mono npm-install-box p-2 rounded-lg">
+                        npm i @finite-logic/stream-weaver
+                    </div>
+                </div>
+                <!-- Solution 9 & 10 Combined CTA -->
+                <div class="p-6 rounded-xl bg-primary/10 border-primary/50 flex flex-col justify-center items-center text-center">
+                    <i data-lucide="zap" class="text-primary mb-3 h-10 w-10"></i>
+                    <h3 class="text-2xl font-bold text-white mb-2">CacheSense & QuantumRate</h3>
+                    <p class="text-gray-300 mb-4">
+                        Unlock these two advanced solutions with a Pro subscription for managed predictive caching and real-time anomaly detection.
+                    </p>
+                    <button onclick="openModal('pro_features')" class="py-2 px-6 rounded-lg bg-primary text-bg-dark font-semibold hover:bg-blue-400 transition">
+                        View Pro Features
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Pricing Tiers Section -->
+        <section id="tiers" class="max-w-7xl mx-auto py-20 px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4">Transparent Pricing for Infinite Scale</h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    Choose the tier that matches your required level of management, security, and dedicated infrastructure.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Tier 1: Community (FREE) -->
+                <div class="p-8 rounded-xl bg-secondary-dark border-2 border-gray-700 shadow-xl flex flex-col">
+                    <h3 class="text-2xl font-bold text-white mb-1">Community</h3>
+                    <p class="text-gray-400 mb-6">For exploration, student projects, and local POCs.</p>
+                    <div class="text-5xl font-extrabold text-white mb-6">
+                        FREE
+                    </div>
+                    <ul class="space-y-3 text-gray-300 flex-grow">
+                        <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2"></i>Access to **10 NPM Packages**</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2"></i>Self-Hosted Codebase</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2"></i>Core Algorithms Only</li>
+                        <li class="flex items-center text-gray-500"><i data-lucide="x" class="w-5 h-5 text-red-500 mr-2"></i>No Guaranteed SLA</li>
+                        <li class="flex items-center text-gray-500"><i data-lucide="x" class="w-5 h-5 text-red-500 mr-2"></i>No API Access (NPM only)</li>
+                    </ul>
+                    <a href="https://www.npmjs.com/org/finite-logic" target="_blank" class="mt-8 block py-3 px-6 text-center rounded-lg bg-gray-500 text-white font-semibold hover:bg-gray-600 transition">
+                        View NPM Packages
+                    </a>
+                </div>
+
+                <!-- Tier 2: Professional (PRO) -->
+                <div class="p-8 rounded-xl bg-secondary-dark border-4 border-primary shadow-2xl shadow-primary/30 flex flex-col">
+                    <div class="bg-primary text-bg-dark text-xs font-bold px-3 py-1 rounded-full w-fit mb-3">RECOMMENDED</div>
+                    <h3 class="text-2xl font-bold text-white mb-1">Professional</h3>
+                    <p class="text-gray-400 mb-6">For dedicated applications, startups, and full-stack teams.</p>
+                    <div class="text-5xl font-extrabold text-white mb-6">
+                        $49 <span class="text-xl font-normal text-gray-400">/ month</span>
+                    </div>
+                    <ul class="space-y-3 text-white flex-grow">
+                        <li class="flex items-center"><i data-lucide="zap" class="w-5 h-5 text-primary mr-2"></i>**Everything in Community**</li>
+                        <li class="flex items-center"><i data-lucide="cloud" class="w-5 h-5 text-primary mr-2"></i>**Managed Cloud API Access**</li>
+                        <li class="flex items-center"><i data-lucide="activity" class="w-5 h-5 text-primary mr-2"></i>**Real-Time Global Ledger & Monitoring**</li>
+                        <li class="flex items-center"><i data-lucide="target" class="w-5 h-5 text-primary mr-2"></i>**Automated Remediation Workflows**</li>
+                        <li class="flex items-center"><i data-lucide="headphones" class="w-5 h-5 text-primary mr-2"></i>Dedicated Support (8/5)</li>
+                    </ul>
+                    <button onclick="openModal('register')" class="mt-8 block py-3 px-6 text-center rounded-lg cta-button text-white font-bold text-lg shadow-lg hover:bg-green-600 transition">
+                        Start 14-Day Free Trial
+                    </button>
+                </div>
+
+                <!-- Tier 3: Enterprise -->
+                <div class="p-8 rounded-xl bg-secondary-dark border-2 border-gray-700 shadow-xl flex flex-col">
+                    <h3 class="text-2xl font-bold text-white mb-1">Enterprise</h3>
+                    <p class="text-gray-400 mb-6">For corporations needing compliance, custom SLA, and dedicated infrastructure.</p>
+                    <div class="text-5xl font-extrabold text-white mb-6">
+                        Custom
+                    </div>
+                    <ul class="space-y-3 text-gray-300 flex-grow">
+                        <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2"></i>**Everything in Professional**</li>
+                        <li class="flex items-center"><i data-lucide="database" class="w-5 h-5 text-green-500 mr-2"></i>Dedicated Infrastructure Deployment</li>
+                        <li class="flex items-center"><i data-lucide="shield" class="w-5 h-5 text-green-500 mr-2"></i>Compliance Evidence & Reporting</li>
+                        <li class="flex items-center"><i data-lucide="users" class="w-5 h-5 text-green-500 mr-2"></i>24/7 Priority Support & Onboarding</li>
+                        <li class="flex items-center"><i data-lucide="settings" class="w-5 h-5 text-green-500 mr-2"></i>Custom Feature Engineering</li>
+                    </ul>
+                    <button onclick="openModal('enterprise')" class="mt-8 block py-3 px-6 text-center rounded-lg border border-primary text-primary font-semibold hover:bg-primary/20 transition">
+                        Contact Sales
+                    </button>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- Contact/Footer -->
+        <footer id="contact" class="max-w-7xl mx-auto py-10 px-6 border-t border-secondary-dark mt-10">
+            <div class="text-center text-gray-500">
+                <h3 class="text-xl font-bold text-white mb-2">FINITE LOGIC - Designed for Trust.</h3>
+                <p class="text-sm">Questions about Enterprise features or custom engineering? Contact us below.</p>
+                <p class="text-sm mt-4">Email: akshayaselvakumar532@gmail.com| &copy; 2025 FINITE LOGIC, Inc. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- START MODAL AREA -->
+
+    <!-- Registration Modal -->
+    <div id="registerModal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-secondary-dark p-8 rounded-xl max-w-lg w-full border border-primary/50 shadow-2xl shadow-primary/20 transform scale-100">
+            <h3 class="text-3xl font-bold text-primary mb-3">Start Your Pro Trial</h3>
+            <p class="text-gray-400 mb-6">Enter your email to instantly receive your API key and start your 14-day free trial. No credit card required.</p>
+            <input type="email" id="trialEmail" placeholder="Your work email address" class="w-full p-3 rounded-lg bg-bg-dark border border-gray-600 text-white focus:ring-primary focus:border-primary mb-4" required>
+            <button onclick="simulateRegistration()" class="w-full py-3 rounded-lg cta-button text-white font-semibold text-lg hover:bg-green-600 transition">
+                Activate Free Trial
+            </button>
+            <button onclick="closeModal('registerModal')" class="w-full mt-3 py-2 text-gray-400 hover:text-white transition">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Enterprise Contact Modal -->
+    <div id="enterpriseModal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-secondary-dark p-8 rounded-xl max-w-lg w-full border border-primary/50 shadow-2xl shadow-primary/20 transform scale-100">
+            <h3 class="text-3xl font-bold text-primary mb-3">Enterprise Inquiry</h3>
+            <p class="text-gray-400 mb-6">A dedicated sales representative will contact you within one business day to discuss custom SLAs and private infrastructure deployment.</p>
+            <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg bg-bg-dark border border-gray-600 text-white focus:ring-primary focus:border-primary mb-4">
+            <input type="email" placeholder="Your Work Email" class="w-full p-3 rounded-lg bg-bg-dark border border-gray-600 text-white focus:ring-primary focus:border-primary mb-4">
+            <textarea placeholder="Tell us about your needs..." rows="3" class="w-full p-3 rounded-lg bg-bg-dark border border-gray-600 text-white focus:ring-primary focus:border-primary mb-4"></textarea>
+            <button onclick="closeModal('enterpriseModal'); alert('Thank you! A sales rep will contact you shortly.');" class="w-full py-3 rounded-lg cta-button text-white font-semibold text-lg hover:bg-green-600 transition">
+                Submit Inquiry
+            </button>
+            <button onclick="closeModal('enterpriseModal')" class="w-full mt-3 py-2 text-gray-400 hover:text-white transition">
+                Close
+            </button>
+        </div>
+    </div>
+    
+    <!-- END MODAL AREA -->
+
+
+    <script>
+        lucide.createIcons();
+
+        // --- MODAL LOGIC ---
+
+        function openModal(type) {
+            const modalId = type === 'register' ? 'registerModal' : 'enterpriseModal';
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // --- REGISTRATION SIMULATION ---
+
+        function simulateRegistration() {
+            const emailInput = document.getElementById('trialEmail');
+            const email = emailInput.value.trim();
+
+            if (!email || !email.includes('@')) {
+                // Use a visible message instead of alert()
+                emailInput.style.borderColor = 'red';
+                emailInput.placeholder = 'Please enter a valid email to start your trial!';
+                return;
+            }
+
+            // 1. Close the registration modal
+            closeModal('registerModal');
+
+            // 2. Clear the email field
+            emailInput.value = '';
+            
+            // 3. Send the user to the simulated "Dashboard" page
+            // Since we can only generate one HTML file, we will redirect the current page
+            // to a success message, simulating the dashboard experience.
+            
+            const successPageContent = `
+                <div class="min-h-screen bg-bg-dark text-white flex flex-col items-center justify-center p-6 text-center">
+                    <i data-lucide="sparkles" class="w-16 h-16 text-primary mb-6"></i>
+                    <h1 class="text-5xl font-extrabold mb-4">Welcome, ${email}!</h1>
+                    <p class="text-xl text-gray-400 max-w-2xl mb-8">
+                        Your 14-day Professional Tier Free Trial has been successfully activated.
+                        <br>
+                        Your unique API Key is: <strong>FL-${Math.random().toString(36).substring(2, 15).toUpperCase()}</strong>
+                    </p>
+                    <p class="text-lg text-gray-300 mb-10">
+                        You can now use this key to access the managed cloud API features for ImmutaAudit, BlindQuery, and all 10 solutions.
+                    </p>
+                    <a href="index.html" class="py-3 px-8 rounded-xl cta-button text-white font-bold text-lg hover:bg-green-600 transition">
+                        Back to Home Page
+                    </a>
+                </div>
+                <script>lucide.createIcons();<\/script>
+            `;
+
+            document.body.innerHTML = successPageContent;
+            
+        }
+
+    </script>
+</body>
+</html>
