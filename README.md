@@ -1,4 +1,4 @@
-# finite-logic-launch-site
+### finite-logic-launch-site
 Official marketing and conversion platform for FINITE LOGIC's 10-package SAAS offering, detailing Free (NPM) vs. Paid (API) tiers.
 
 **FINITE LOGIC Launch Site**
@@ -56,4 +56,4 @@ This marketing site drives traffic to the NPM packages, which are hosted in sepa
 * **Example Package:** `@finite-logic/blind-query`
 
 ### 🌎 Website 
-`https://akshayadeveloper.github.io/finite-logic-launch-site/index.html`
+https://akshayadeveloper.github.io/finite-logic-launch-site/index.html
